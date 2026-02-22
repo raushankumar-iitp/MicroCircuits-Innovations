@@ -53,4 +53,26 @@ The project is already **live and deployed on a production server**.
 
 ---
 
-## 📂 Project Structure (Simplified)
+
+## ⚠️ Important Note
+Due to:
+- Large project size (~550 MB)
+- Client confidentiality
+- Production-level assets
+
+Only **essential source code and structure** are shared in this repository.
+Build files, environment files, and sensitive data are excluded.
+
+---
+
+## 👨‍💻 Developer
+**Raushan Kumar**  
+B.S. Student – Computer Science & Data Analytics  
+IIT Patna  
+
+---
+
+## 📄 License
+This project is developed for a client.
+The source code is shared **for learning, showcase, and portfolio purposes only**.
+Commercial reuse is not permitted without permission.
