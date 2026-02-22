@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+    --color-primary: #00c2ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Outfit', 'Inter', sans-serif;
+    background: #000;
+    color: #fff;
+    overflow-x: hidden;
+    line-height: 1.5;
+    /* Improved from 1.4 for better readability on zoom */
+    font-size: 1rem;
+    /* Base size */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Fluid Typography */
+h1 {
+    font-size: clamp(2rem, 8vw, 4.5rem);
+    line-height: 1.1;
+}
+
+h2 {
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    line-height: 1.2;
+}
+
+h3 {
+    font-size: clamp(1.25rem, 4vw, 2.25rem);
+    line-height: 1.3;
+}
+
+/* Mobile Safety Defaults */
+img,
+video,
+iframe,
+canvas {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Prevent text overlap/overflow */
+p,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #06b6d4, #3b82f6, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Common Layout Utilities */
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Mobile Responsiveness & Zoom Safety */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+
+    body {
+        font-size: 0.9375rem;
+        /* ~15px */
+    }
+
+    .mt-3 {
+        margin-top: 2rem;
+    }
+
+    .mobile-responsive-padding {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    body {
+        font-size: 0.875rem;
+        /* ~14px */
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-3 {
+    margin-top: 3rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+.mobile-menu-btn {
+    display: none;
+}
+
+.mobile-flex {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .mobile-hidden {
+        display: none;
+    }
+
+    .mobile-flex {
+        display: block;
+    }
+
+    /* Ensure content fits mobile screens */
+    .mobile-full-width {
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+
+    /* Adjust flex layouts for mobile */
+    .mobile-column {
+        flex-direction: column;
+    }
+
+    .mobile-centered {
+        text-align: center;
+        align-items: center;
+    }
+
+    /* Mobile navigation */
+    .desktop-nav {
+        display: none !important;
+    }
+
+    .mobile-menu-btn {
+        display: flex !important;
+        align-items: center;
+    }
+
+    .mobile-nav {
+        display: none !important;
+    }
+
+    .mobile-nav.open {
+        display: flex !important;
+    }
+
+    /* Adjust header padding for mobile */
+    header[style*="position: fixed"] {
+        padding: 1rem !important;
+    }
+
+    /* Adjust logo size for mobile */
+    .logo span {
+        font-size: 0.8rem !important;
+    }
+
+    /* Adjust footer for mobile */
+    footer {
+        padding: 2rem 1rem !important;
+    }
+
+    footer p {
+        font-size: 0.8rem !important;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    /* Further adjustments for small screens */
+    .mobile-full-width {
+        padding: 0.5rem !important;
+    }
+
+    .logo span {
+        font-size: 0.7rem !important;
+    }
+
+    .mobile-nav {
+        top: 60px !important;
+    }
+
+    /* Reduce padding on small screens */
+    .service-card {
+        padding: 20px !important;
+    }
+
+    /* Adjust button styles for small screens */
+    button {
+        font-size: 0.9rem !important;
+    }
+
+    /* Admin panel small screen styles */
+    .admin-dashboard {
+        padding: 0.5rem !important;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr !important;
+        gap: 0.6rem !important;
+    }
+
+    .stat-title {
+        font-size: 0.9rem !important;
+    }
+
+    .stat-value {
+        font-size: 1rem !important;
+    }
+
+    .text-xl.md\:text-2xl {
+        font-size: 1.2rem !important;
+    }
+
+    .p-6.md\:p-8 {
+        padding: 0.8rem !important;
+    }
+
+    .w-12.h-12 {
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+    .text-lg {
+        font-size: 1rem !important;
+    }
+
+    .text-sm {
+        font-size: 0.8rem !important;
+    }
+
+    .text-xs {
+        font-size: 0.7rem !important;
+    }
+}
